@@ -3,10 +3,13 @@ package kr.or.dgit.jdbc_setting.jdbc;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 public class DBCon {
 	private static final DBCon instance = new DBCon();
+	private Connection connection;
 
 	public static DBCon getInstance() {
 		return instance;
@@ -14,9 +17,15 @@ public class DBCon {
 
 	private DBCon() {
 		Properties properties = getProperties("conf.properties");
-		System.out.println(properties.getProperty("user"));
+		try {
+			connection=DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("user"), properties.getProperty("pwd"));
+		} catch (SQLException e) {
+			System.err.printf("%s-%s%n", e.getErrorCode(), e.getMessage());
+			e.printStackTrace();
+		}
+/*		System.out.println(properties.getProperty("user"));
 		System.out.println(properties.getProperty("pwd"));
-		System.out.println(properties.getProperty("url"));
+		System.out.println(properties.getProperty("url"));테스트하기위해 적음*/
 	}
 
 	private Properties getProperties(String propertiesPath) {
@@ -34,5 +43,5 @@ public class DBCon {
 		return connection;
 	}
 
-	private Connection connection;
+	
 }
