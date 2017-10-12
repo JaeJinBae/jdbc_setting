@@ -23,9 +23,6 @@ public class DBCon {
 			System.err.printf("%s-%s%n", e.getErrorCode(), e.getMessage());
 			e.printStackTrace();
 		}
-/*		System.out.println(properties.getProperty("user"));
-		System.out.println(properties.getProperty("pwd"));
-		System.out.println(properties.getProperty("url"));테스트하기위해 적음*/
 	}
 
 	private Properties getProperties(String propertiesPath) {

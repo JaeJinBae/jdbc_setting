@@ -13,9 +13,7 @@ public class JdbcSetting extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -29,9 +27,7 @@ public class JdbcSetting extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public JdbcSetting() {
 		setTitle("데이터베이스 세팅");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

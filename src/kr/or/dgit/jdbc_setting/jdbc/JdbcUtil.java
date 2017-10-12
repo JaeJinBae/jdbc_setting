@@ -26,7 +26,6 @@ public class JdbcUtil {
 				e.printStackTrace();
 			}
 		}
-
 	}
 
 	public static void close(ResultSet rs) {

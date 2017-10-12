@@ -82,7 +82,7 @@ public class ExportService implements DbService {
 			e.printStackTrace();
 		} finally {
 			JdbcUtil.close(rs);
-			JdbcUtil.close(dos);
+			JdbcUtil.close(dos);	
 		}
 	}
 	
